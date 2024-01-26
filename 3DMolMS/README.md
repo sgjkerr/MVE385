@@ -1,24 +1,31 @@
+**You can find the original work here:**
+https://github.com/JosieHong/3DMolMS/tree/main
+
+
 **Before running** 
+
 Please install the required packages by creating a new `Anaconda` environment.
-Navigate to `/3DMolMS´ and run:
+
+Navigate to `/3DMolMS` and run:
 ````bash
 conda env create -f environment.yml
 ````
 This was tested with:
-  OS: Ubuntu 22.04.3 LTS x86_64
-  Kernel: 6.5.0-14-generic
-  Shell: bash 5.1.16
-  CPU: 12th Gen Intel i7-12700K (20) @ 4.900GHz
-  GPU: NVIDIA 01:00.0 NVIDIA Corporation Device 2684 
+ - OS: Ubuntu 22.04.3 LTS x86_64
+ - Kernel: 6.5.0-14-generic
+ - Shell: bash 5.1.16
+ - CPU: 12th Gen Intel i7-12700K (20) @ 4.900GHz
+ - GPU: NVIDIA 01:00.0 NVIDIA Corporation Device 2684 
   
-  Nvidia version:
-    Driver Version: 535.154.05
-    CUDA Version: 12.2 
+ - Nvidia version:
+   - Driver Version: 535.154.05
+   - CUDA Version: 12.2 
 
 
 
 
 **Steps to create datasets for MassFormer and AttentiveFP**
+
 Step 1: Follow steps 1-2 to create the datasets under **Run 3DMolMS**
 
 Step 2: Navigate to the directory `MassFormer`and run the conversion script:
@@ -32,9 +39,10 @@ cd MassFormer
 python ConvertToMassFormer.py
 ````
 
-**Run 3DMolMS** 
+# Run 3DMolMS
 
 Step 1: Download the datasets provided by https://www.nature.com/articles/s41597-023-02408-4#Sec10. Go here for instructions to transfer data: https://docs.olcf.ornl.gov/data/index.html#data-transferring-data 
+
 Gather the datasets as follows:
 ```bash
 |- datasets
@@ -75,4 +83,7 @@ python train.py --checkpoint_path ./check_point/molnet_pre_uv-vis_all_features.p
 ````
 
 Step 5: Make predictions on validation set by running `pred.ipynb`
+
+**Design you own network**
+The number of nodes and number of layers of the network can be changed in `config/molnet_pre.yml` and `config/molnet.yml` for pre-training and training respectively. The encoder in `config/molnet.yml` must match the encoder in `config/molnet_pre.yml` if you wish to transfer the encoder.
 
