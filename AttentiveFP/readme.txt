@@ -6,3 +6,5 @@
  Download all packages as they've been downloaded in packetlist.
 
  then run setup.py before training.
+
+To train a model after giving it data to train on run command python train.py --model-name AttentiveFPModel
