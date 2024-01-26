@@ -5,6 +5,7 @@ https://github.com/JosieHong/3DMolMS/tree/main
 **Before running** 
 
 Please install the required packages by creating a new `Anaconda` environment.
+For an installation guide of `Anaconda` go to: https://docs.anaconda.com/free/anaconda/install/index.html
 
 Navigate to `/3DMolMS` and run:
 ````bash
@@ -23,7 +24,7 @@ This was tested with:
 
 
 
-
+# Create a shared dataset
 **Steps to create datasets for MassFormer and AttentiveFP**
 
 Step 1: Follow steps 1-2 to create the datasets under **Run 3DMolMS**
@@ -67,13 +68,16 @@ Step 2: Create data for pre-training and training by running the following:
 python preprocess_large_dataset.py --dataset_pre_size 2000 --dataset_size 1000 --dataset_val_size 500 --do_parallel
 python preprocess_small_dataset.py --dataset_pre_size 2000 --dataset_size 1000 --dataset_val_size 500 --do_parallel
 ```
-This will put data files in the `./data` directory as `hdf5` files. 
+This will put data files in the `./data` directory as `hdf5` files.
 
 Step 3: Run `pretrain.py` to pre-train the encoder:
 ````bash
 python pretrain.py
+
 ````
-Step 4 (a): Train the full model (to use the pre-trained encoder skip this step):
+This will store the best network parameters found so far as `./check_point/molnet_pre_uv-vis_all_features.pt` 
+
+Step 4 (a): Train the full model from scratch (to use the pre-trained encoder skip this step):
 ````bash
 python train.py
 ````
@@ -82,8 +86,8 @@ Step 4 (b): Train the decoder and use the pre-trained encoder:
 python train.py --checkpoint_path ./check_point/molnet_pre_uv-vis_all_features.pt --transfer
 ````
 
-Step 5: Make predictions on validation set by running `pred.ipynb`
+Step 5: Make predictions on the validation set with the Jupiter notebook `pred.ipynb`
 
-**Design you own network**
-The number of nodes and number of layers of the network can be changed in `config/molnet_pre.yml` and `config/molnet.yml` for pre-training and training respectively. The encoder in `config/molnet.yml` must match the encoder in `config/molnet_pre.yml` if you wish to transfer the encoder.
+**Design your own network**
+The number of nodes and the number of layers of the network can be changed in `config/molnet_pre.yml` and `config/molnet.yml` for pre-training and training respectively. The encoder in `config/molnet.yml` must match the encoder in `config/molnet_pre.yml` if you wish to transfer the encoder.
 
