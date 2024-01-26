@@ -1,0 +1,27 @@
+# encoding ===========================================================
+missing_mols: 
+  mols: [359020, 1279283, 1346080, 3705520, 3790292,
+        4509835, 5198434, 5351491, 5444458, 6587852,
+        7016019, 7102521, 9054620]
+sampling_weights:
+  easy_molecules: 0.2222222222
+  moderate_molecules: 0.3066666667
+  hard_molecules: 0.5555555556
+  very_hard_molecules: 0.8888888889
+  impossible_molecules: 1
+encoding:
+  resolution: 2
+  max_wavelength: 420
+  min_wavelength: 80
+
+  conf_type: 'ornl' 
+  atom_type: 
+    'C': [1, 0, 0, 0, 0, 0]
+    'H': [0, 1, 0, 0, 0, 0]
+    'O': [0, 0, 1, 0, 0, 0]
+    'N': [0, 0, 0, 1, 0, 0]
+    'F': [0, 0, 0, 0, 1, 0]
+    'S': [0, 0, 0, 0, 0, 1]
+
+  max_atom_num: 150
+

@@ -1,0 +1,22 @@
+model:
+  in_dim: 15
+  add_num: 0
+  max_atom_num: 150
+  resolution: 2
+  max_wavelength: 420
+  min_wavelength: 80
+  batch_size: 32
+  emb_dim: 4096 
+  k: 6
+  dropout: 0.2
+  encode_layers: [64, 64, 128, 256, 512, 1024, 2048]
+  decode_layers: [4096, 2048, 1024, 1024, 1024, 1024]
+  # Model 1
+  #encode_layers: [64, 64, 128, 256, 512, 1024]
+  #decode_layers: [4096, 2048, 1024, 512, 186, 186]
+
+train:
+  epochs: 200
+  batch_size: 32
+  num_workers: 0
+  lr: 0.001
