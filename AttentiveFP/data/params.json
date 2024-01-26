@@ -1,0 +1,30 @@
+{
+    "AttentiveFPModel": {
+        "learning_rate": [0.001], "batch_size": [32],
+        "num_layers": [4], "dropout": [0]
+    },
+    "AttentiveFPModel_org": {
+        "learning_rate": [0.001], "batch_size": [32, 128],
+        "num_layers": [1, 2, 4], "dropout": [0, 0.1, 0.2]
+    },
+    "MPNNModel": {
+        "learning_rate": [0.001], "batch_size": [128],
+        "n_hidden": [256], "dropout": [0, 0.1, 0.2],
+        "n_atom_feat": [15, 30, 60]
+    },
+    "GCNModel": {
+        "learning_rate": [0.001], "batch_size": [32, 128],
+        "graph_conv_layers": [[64, 64], [128, 128], [256, 256]],
+        "dropout": [0, 0.1, 0.2]
+    },
+    "GATModel": {
+        "learning_rate": [0.001], "batch_size": [32, 128],
+        "graph_conv_layers": [[64, 64], [128, 128], [256, 256]],
+        "dropout": [0, 0.1, 0.2]
+    },
+    "PagtnModel": {
+        "learning_rate": [0.001], "batch_size": [32, 128],
+        "hidden_features": [64, 128, 256], "dropout": [0, 0.1, 0.2],
+        "num_layers": [1, 2, 4]
+    }
+}

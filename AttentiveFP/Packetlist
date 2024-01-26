@@ -1,0 +1,17 @@
+conda install python=3.7
+conda install nvidia/label/cuda-11.6.0::cuda
+conda install -c nvidia cudnn=8.3
+conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia
+pip install tensorflow-gpu==1.14
+conda install protobuf=3.20 #after tensorflow
+conda install deepchem
+conda install rdkit
+conda install pyg -c pyg
+pip install tensorflow-probability==0.7
+conda install PubChemPy
+conda install dgllife
+conda install xlrd
+conda install openpyxl
+conda install -c dglteam/label/cu116 dgl
+pip install dglgo -f https://data.dgl.ai/wheels-test/repo.html
+
