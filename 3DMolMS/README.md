@@ -34,9 +34,9 @@ Step 2: Navigate to the directory `MassFormer`and run the conversion script:
 cd MassFormer
 python ConvertToMassFormer.py
 ````
-To create datasets for `AttentiveFP` navigate to the directory `AttentiveFP` do the following:
+To create datasets for `AttentiveFP` navigate to the directory `AttentiveFP` and do the following:
 ````bash
-cd MassFormer
+cd AttentiveFP
 python ConvertToMassFormer.py
 ````
 
