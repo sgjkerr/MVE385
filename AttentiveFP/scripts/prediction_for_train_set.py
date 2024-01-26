@@ -26,10 +26,6 @@ else:
 
 # parse arguments
 parser = argparse.ArgumentParser()
-
-parser.add_argument(
-    "--sheetcsv-dir", help="sheetcsv dir", default="../smalldatacsv/ornl_aisd_ex/ornl_aisd_ex_1.csv"
-)
 parser.add_argument("--model-name", help="graph model name", required=True)
 
 if MSE == 0:
