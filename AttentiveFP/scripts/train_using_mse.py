@@ -24,9 +24,7 @@ from utils_using_MSE import get_featurizer, GraphModel
 # parse arguments
 parser = argparse.ArgumentParser()
 
-parser.add_argument(
-    "--sheetcsv-dir", help="sheetcsv dir", default="../smalldatacsv/ornl_aisd_ex/ornl_aisd_ex_1.csv"
-)
+
 parser.add_argument("--model-name", help="graph model name", required=True)
 parser.add_argument(
     "--model-dir", help="dir to save model", default="../models2"
@@ -40,8 +38,6 @@ parser.add_argument(
     default="../results"
 )
 args = parser.parse_args()
-
-sheetcsv_dir = args.sheetcsv_dir
 
 model_name = args.model_name
 model_dir = args.model_dir.rstrip("/") + f"/{model_name}"
